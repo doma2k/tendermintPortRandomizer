@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo -e "\n\n\e[1mWelcome to tendermint PORTS RANDOMIZER!\e[0m"
+echo -e "\n\n\e[1mWelcome to tendermint PORT RANDOMIZER!\e[0m"
 # Define working folder and file check
 function workingFolder {  
     echo -e '\nEnter path to config folder
@@ -165,6 +165,8 @@ function portgRPC_WEB {
             portROSETTA
             portgRPC
             portgRPC_WEB
+
+echo -e "\n\e[1mNew ports are ready!\n!\e[0m"
 #             break
 #             ;;
 # 		# "Add ports to firewall")
