@@ -132,29 +132,6 @@ function portgRPC_WEB {
     fi
     sleep 1
 }
-
-
-# # Add new ports to firewall
-# function addPorts {
-#     filename='ports.txt'
-#     ufw='ufw allow'
-#     sudo lsof -i -P -n | grep LISTEN | sed -n 's/.*:\($*\)/\1/p' | 
-#     grep -o "\b[0-9]+\b" >> ports.txt
-#     while read p; do 
-#     $ufw $p
-#     done < "$filename"
-#     rm ports.txt
-# }
-
-# Menu 
-# PS3='Enter your option:'
-# options=("Generate ports" "Quit")
-# select opt in "${options[@]}"
-# do
-#     case $opt in
-#         "Generate ports")
-#             echo -e '\nEnter path to config folder
-# example: ~/.juno/config \n' 
             workingFolder
             portABCI
             portRPC
@@ -167,18 +144,6 @@ function portgRPC_WEB {
             portgRPC_WEB
 
 echo -e "\n\e[1mNew ports are ready\n\e[0m"
-#             break
-#             ;;
-# 		# "Add ports to firewall")
-#         #     echo -e '\n Adding ports\n' && sleep 1
-# 		# 	addPorts
-# 		# 	break
-#         #     ;;
-#         "Quit")
-#             break
-#             ;;
-#         *) echo -e "\e[91minvalid option $REPLY\e[0m";;
-#     esac
-# done
+
 
 
