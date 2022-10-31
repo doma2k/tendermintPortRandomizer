@@ -6,7 +6,7 @@ function workingFolder {
     echo -e '\nEnter path to config folder
 example: ~/.juno/config \n'
 
-	if [ ! $WORKING_DIRECTORY ]; then
+    if [ ! $WORKING_DIRECTORY ]; then
 		read -p "Path: " WORKING_DIRECTORY 
 		echo 'export WORKING_DIRECTORY='${WORKING_DIRECTORY} >> $HOME/.bash_profile
 	    source $HOME/.bash_profile
