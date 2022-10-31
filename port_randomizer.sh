@@ -166,7 +166,7 @@ function portgRPC_WEB {
             portgRPC
             portgRPC_WEB
 
-echo -e "\n\e[1mNew ports are ready\n!\e[0m"
+echo -e "\n\e[1mNew ports are ready\n\e[0m"
 #             break
 #             ;;
 # 		# "Add ports to firewall")
