@@ -1,36 +1,28 @@
 #!/bin/bash
 
-       echo -e "\n\n\e[1mWPORT RANDOMIZER!\e[0m"
-
-
-function workingFolder {  
-       echo -e '\nEnter path to config folder
+echo -e "\n\n\e[1mPORT RANDOMIZER!\e[0m"
+echo -e '\nEnter path to config folder
 example: ~/.juno/config \n'
-
-		read -p "Path: " WORKING_DIRECTORY 
-		echo 'export WORKING_DIRECTORY='${WORKING_DIRECTORY} >> $HOME/.bash_profile
-	    source $HOME/.bash_profile
+function workingFolder {  
+	read -p "Path: " WORKING_DIRECTORY 
+	echo 'export WORKING_DIRECTORY='${WORKING_DIRECTORY} >> $HOME/.bash_profile
+	source $HOME/.bash_profile
 	sleep 1
-
     APP=$WORKING_DIRECTORY/app.toml
     CONFIG=$WORKING_DIRECTORY/config.toml
-
     if [ -f "$APP" ]; then
         echo -e ""
     else 
         echo -e "\n$APP does not exist."
         exit 1
     fi
-
     if [ -f "$CONFIG" ]; then
         echo -e ""
     else 
         echo -e "\n $CONFIG does not exist.\n"
         exit 1
     fi
-
 }
-
 # Port generation and replacment 
 function portABCI {
     random_port=$(( ((RANDOM<<15)|RANDOM) % 49152 + 10000 ))
@@ -132,7 +124,7 @@ function portgRPC_WEB {
     sleep 1
 }
 
-function portChange {
+function portChange() {
     workingFolder
     portABCI
     portRPC
@@ -145,9 +137,8 @@ function portChange {
     portgRPC_WEB
 }
 
-portChange
-            
+portChange             
 echo -e "\n\e[1mNew ports are ready\n\e[0m"
-
+exit 0
 
 
