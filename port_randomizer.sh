@@ -1,16 +1,15 @@
 #!/bin/bash
 
-echo -e "\n\n\e[1mWelcome to tendermint PORT RANDOMIZER!\e[0m"
-# Define working folder and file check
+       echo -e "\n\n\e[1mWPORT RANDOMIZER!\e[0m"
+
+
 function workingFolder {  
-    echo -e '\nEnter path to config folder
+       echo -e '\nEnter path to config folder
 example: ~/.juno/config \n'
 
-    if [ ! $WORKING_DIRECTORY ]; then
 		read -p "Path: " WORKING_DIRECTORY 
 		echo 'export WORKING_DIRECTORY='${WORKING_DIRECTORY} >> $HOME/.bash_profile
 	    source $HOME/.bash_profile
-    fi
 	sleep 1
 
     APP=$WORKING_DIRECTORY/app.toml
@@ -132,17 +131,22 @@ function portgRPC_WEB {
     fi
     sleep 1
 }
-            workingFolder
-            portABCI
-            portRPC
-            portPPROF
-            portP2P
-            portPROMETHEUS
-            portAPI
-            portROSETTA
-            portgRPC
-            portgRPC_WEB
 
+function portChange {
+    workingFolder
+    portABCI
+    portRPC
+    portPPROF
+    portP2P
+    portPROMETHEUS
+    portAPI
+    portROSETTA
+    portgRPC
+    portgRPC_WEB
+}
+
+portChange
+            
 echo -e "\n\e[1mNew ports are ready\n\e[0m"
 
 
