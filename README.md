@@ -1,4 +1,4 @@
-# tendermintPortRandomizer 
+# Tendermint Port Randomizer 
 Generating and replacing standart Tendermint ports 
 
 1.Download and run script:
